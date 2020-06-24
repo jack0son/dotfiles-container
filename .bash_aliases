@@ -39,7 +39,7 @@ alias docker-compose='docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$PWD:$PWD" \
     -w="$PWD" \
-    docker/compose:1.24.4'
+    docker/compose:1.24.1'
 alias dl='docker logs --follow'
 alias dcls='docker container ls'
 alias dlf="docker inspect --format='{{.LogPath}}'"
