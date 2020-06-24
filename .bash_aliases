@@ -18,6 +18,19 @@ alias branchbydater='git branch -r --sort=committerdate --format="%(committerdat
 alias gbbdr='gitbranchbydater'
 alias trackallremote='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
 
+# Network
+alias myip='curl ifconfig.me'
+
+# Woke
+alias woke-server-up='docker-compose -f server.docker-compose.yml up -d'
+alias woke-server-down='docker-compose -f server.docker-compose.yml down'
+alias woke-bot-up='docker-compose -f bot.docker-compose.yml up -d'
+alias woke-bot-down='docker-compose -f bot.docker-compose.yml down'
+alias woke-oracle-up='docker-compose -f oracle.docker-compose.yml up -d'
+alias woke-oracle-down='docker-compose -f oracle.docker-compose.yml down'
+alias woke-oracle-up-old='docker rm $(docker ps -aq --filter name=oracle); docker run --name oracle -d -e NODE_ENV=production -e WOKE_ROLE=oracle jvindustries/woke:oracle'
+alias woke-oracle-down-old='docker container stop oracle'
+
 # Docker
 alias dcls='docker container ls'
 alias dcs='docker container stop'
@@ -26,7 +39,7 @@ alias docker-compose='docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$PWD:$PWD" \
     -w="$PWD" \
-    docker/compose:1.24.1'
+    docker/compose:1.24.4'
 alias dl='docker logs --follow'
 alias dcls='docker container ls'
 alias dlf="docker inspect --format='{{.LogPath}}'"
