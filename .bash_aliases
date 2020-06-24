@@ -1,3 +1,23 @@
+# Alias management
+alias valias='vim ~/.bash_aliases'
+alias salias='source ~/.bash_aliases'
+alias vash='vim ~/.bashrc'
+
+# Git 
+alias gs='git status'
+alias lastcommit='git log --name-status HEAD^..HEAD'
+alias gls="git log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate"
+alias gll="git log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate --numstat"
+alias glc='lastcommit'
+alias gitbnr='git symbolic-ref -q HEAD'  # with ref
+alias gitbn='git rev-parse --abbrev-ref HEAD'  
+alias gittf='git ls-tree -r $(gitbn) --name-only'
+alias branchbydate='git for-each-ref --sort=committerdate refs/heads/ --format="%(committerdate:short) %(refname)"'
+alias gbbd='gitbranchbydate'
+alias branchbydater='git branch -r --sort=committerdate --format="%(committerdate:short) %(refname)"'
+alias gbbdr='gitbranchbydater'
+alias trackallremote='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
+
 # Docker
 alias dcls='docker container ls'
 alias dcs='docker container stop'
