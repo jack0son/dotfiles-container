@@ -30,6 +30,9 @@ alias woke-oracle-up='docker-compose -f oracle.docker-compose.yml up -d'
 alias woke-oracle-down='docker-compose -f oracle.docker-compose.yml down'
 alias woke-oracle-up-old='docker rm $(docker ps -aq --filter name=oracle); docker run --name oracle -d -e NODE_ENV=production -e WOKE_ROLE=oracle jvindustries/woke:oracle'
 alias woke-oracle-down-old='docker container stop oracle'
+alias dl-oracle='dl docker_oracle_1'
+alias dl-server='dl docker_auth-server_1'
+alias dl-tipper='dl docker_tipper_1'
 
 # Docker
 alias dcls='docker container ls'
