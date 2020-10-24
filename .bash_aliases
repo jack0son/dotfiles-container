@@ -21,6 +21,14 @@ alias trackallremote='git branch -r | grep -v "\->" | while read remote; do git 
 # Network
 alias myip='curl ifconfig.me'
 
+# -- Project shortcuts --
+WOKE_DAPP="$HOME/woke-dapp"
+alias woke='cd $WOKE_DAPP'
+alias woke-app='cd $WOKE_DAPP/app'
+alias woke:build='bash $WOKE_DAPP/scripts/build.sh'
+alias woke:deploy='bash $WOKE_DAPP/scripts/deploy.sh'
+alias woke:migrate='bash $WOKE_DAPP/@woke/contracts-src/scripts/migrate.sh'
+
 # Woke
 alias woke-server-up='docker-compose -f server.docker-compose.yml up -d'
 alias woke-server-down='docker-compose -f server.docker-compose.yml down'
