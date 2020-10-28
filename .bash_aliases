@@ -41,10 +41,13 @@ alias woke-oracle-down-old='docker container stop oracle'
 alias dl-oracle='dl docker_oracle_1'
 alias dl-server='dl docker_auth-server_1'
 alias dl-tipper='dl docker_tipper_1'
+alias dl-notifier='dl docker_notifier_1'
 
 # Docker
 alias dcls='docker container ls'
 alias dcs='docker container stop'
+alias dcp='docker container prune'
+alias dip='docker image prune'
 alias dl='docker logs --follow'
 alias docker-compose='docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \

@@ -14,6 +14,7 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+set -o vi
 
 # Put your fun stuff here.
 source ~/.bash_aliases
